@@ -6,7 +6,7 @@ output "subnets" {
       address_prefixes   = s.address_prefixes
       resource_group     = s.resource_group_name
       virtual_network    = s.virtual_network_name
-      nsg_association_id = try(azurerm_subnet_network_security_group_association.vnet[s.name], null)
+      nsg_association_id = try(azurerm_subnet_network_security_group_association.vnet[s.name].id, null)
     }
   }
 }
